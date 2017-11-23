@@ -51,9 +51,13 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../untitled/main.c \
-		../untitled/manejocadenas.c 
+		../untitled/manejocadenas.c \
+		../untitled/datastructure.c \
+		../untitled/nodo.c 
 OBJECTS       = main.o \
-		manejocadenas.o
+		manejocadenas.o \
+		datastructure.o \
+		nodo.o
 DIST          = ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/common/linux.conf \
@@ -213,6 +217,7 @@ DIST          = ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_post.prf \
+		../untitled/.qmake.stash \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -226,8 +231,12 @@ DIST          = ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/lex.prf \
-		../untitled/untitled.pro manejocadenas.h ../untitled/main.c \
-		../untitled/manejocadenas.c
+		../untitled/untitled.pro manejocadenas.h \
+		datastructure.h \
+		nodo.h ../untitled/main.c \
+		../untitled/manejocadenas.c \
+		../untitled/datastructure.c \
+		../untitled/nodo.c
 QMAKE_TARGET  = untitled
 DESTDIR       = 
 TARGET        = untitled
@@ -398,6 +407,7 @@ Makefile: ../untitled/untitled.pro ../../../Qt/5.9.1/gcc_64/mkspecs/linux-g++/qm
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -572,6 +582,7 @@ Makefile: ../untitled/untitled.pro ../../../Qt/5.9.1/gcc_64/mkspecs/linux-g++/qm
 ../../../Qt/5.9.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.9.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.9.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.9.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/5.9.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -629,11 +640,20 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../untitled/main.c ../untitled/manejocadenas.h
+main.o: ../untitled/main.c ../untitled/manejocadenas.h \
+		../untitled/datastructure.h \
+		../untitled/nodo.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o main.o ../untitled/main.c
 
 manejocadenas.o: ../untitled/manejocadenas.c ../untitled/manejocadenas.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o manejocadenas.o ../untitled/manejocadenas.c
+
+datastructure.o: ../untitled/datastructure.c ../untitled/datastructure.h \
+		../untitled/nodo.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o datastructure.o ../untitled/datastructure.c
+
+nodo.o: ../untitled/nodo.c ../untitled/nodo.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o nodo.o ../untitled/nodo.c
 
 ####### Install
 

@@ -4,7 +4,11 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.c \
-    manejocadenas.c
+    manejocadenas.c \
+    datastructure.c \
+    nodo.c
 
 HEADERS += \
-    manejocadenas.h
+    manejocadenas.h \
+    datastructure.h \
+    nodo.h
