@@ -28,5 +28,5 @@ nodo *deque(List *l);
 
 //METODOS DE UNA LISTA
 void insertAt(List *l, nodo *n, int index);
-nodo *getElementAt(List *l, int index);
+nodo *getElementAt(List *l, int index);//ELIMINA EL ELEMENTO EN EL INDEX INDICADO Y DIVUELVE SU REFERENCIA
 #endif // DATASTRUCTURE_H

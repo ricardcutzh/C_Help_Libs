@@ -19,13 +19,13 @@ int main()
 
     nodo *n5 = newNodo();
     n5->valor = 5;
-    /*push(l,n);
+    push(l,n);
     push(l,n2);
     push(l,n3);
     push(l,n4);
     push(l,n5);
     printList(l);
-    pop(l);
+    /*pop(l);
     printList(l);
     pop(l);
     printList(l);
@@ -52,5 +52,16 @@ int main()
     printList(l);
     deque(l);
     printList(l);*/
+
+    nodo *n6 = newNodo();
+    n6->valor = 777;
+
+    insertAt(l,n6,0);
+    printList(l);
+
+    getElementAt(l,3);
+    getElementAt(l,0);
+    getElementAt(l,0);
+    printList(l);
     return 0;
 }
