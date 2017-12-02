@@ -53,11 +53,13 @@ OBJECTS_DIR   = ./
 SOURCES       = ../untitled/main.c \
 		../untitled/manejocadenas.c \
 		../untitled/datastructure.c \
-		../untitled/nodo.c 
+		../untitled/nodo.c \
+		../untitled/m_archivos.c 
 OBJECTS       = main.o \
 		manejocadenas.o \
 		datastructure.o \
-		nodo.o
+		nodo.o \
+		m_archivos.o
 DIST          = ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/common/linux.conf \
@@ -233,10 +235,12 @@ DIST          = ../../../Qt/5.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.9.1/gcc_64/mkspecs/features/lex.prf \
 		../untitled/untitled.pro manejocadenas.h \
 		datastructure.h \
-		nodo.h ../untitled/main.c \
+		nodo.h \
+		m_archivos.h ../untitled/main.c \
 		../untitled/manejocadenas.c \
 		../untitled/datastructure.c \
-		../untitled/nodo.c
+		../untitled/nodo.c \
+		../untitled/m_archivos.c
 QMAKE_TARGET  = untitled
 DESTDIR       = 
 TARGET        = untitled
@@ -642,7 +646,8 @@ compiler_clean:
 
 main.o: ../untitled/main.c ../untitled/manejocadenas.h \
 		../untitled/datastructure.h \
-		../untitled/nodo.h
+		../untitled/nodo.h \
+		../untitled/m_archivos.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o main.o ../untitled/main.c
 
 manejocadenas.o: ../untitled/manejocadenas.c ../untitled/manejocadenas.h
@@ -654,6 +659,9 @@ datastructure.o: ../untitled/datastructure.c ../untitled/datastructure.h \
 
 nodo.o: ../untitled/nodo.c ../untitled/nodo.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o nodo.o ../untitled/nodo.c
+
+m_archivos.o: ../untitled/m_archivos.c ../untitled/m_archivos.h
+	$(CC) -c $(CFLAGS) $(INCPATH) -o m_archivos.o ../untitled/m_archivos.c
 
 ####### Install
 

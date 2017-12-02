@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <manejocadenas.h>
 #include <datastructure.h>
+#include <m_archivos.h>
 
 int main()
 {
+    //ejemplo1();
+    ejemplo3();
+    /*
     List *l = newList();
     nodo *n = newNodo();
     n->valor = 1;
@@ -53,7 +57,7 @@ int main()
     deque(l);
     printList(l);*/
 
-    nodo *n6 = newNodo();
+    /*nodo *n6 = newNodo();
     n6->valor = 777;
 
     insertAt(l,n6,0);
@@ -62,6 +66,7 @@ int main()
     getElementAt(l,3);
     getElementAt(l,0);
     getElementAt(l,0);
-    printList(l);
+    printList(l);*/
+
     return 0;
 }
